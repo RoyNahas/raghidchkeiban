@@ -12,7 +12,7 @@
           <div><v-icon small>mdi-phone</v-icon>phone : +961 70 196 188</div>
           <div>
             <v-icon small>mdi-linkedin</v-icon>Linkdin :
-            linkedin.com/in/dr-raghid-chkeiban-a69975184
+            <href>linkedin.com/in/dr-raghid-chkeiban-a69975184</href>
           </div>
           <div><v-icon small>mdi-email</v-icon>Email : rchkeiban@gmail.com</div>
         </v-card-text>
