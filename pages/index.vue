@@ -5,7 +5,7 @@
         <h1 style="center">Comming Soon</h1>
       </v-col>
       <v-col sm="3" xs="6">
-        <v-img src="/tooth-build.jpg" max-height="1000" max-width="1000" />
+        <v-img src="/tooth-build.jpg" max-height="500" max-width="500" />
       </v-col>
     </v-row>
     <v-row justify="center" align="center">
