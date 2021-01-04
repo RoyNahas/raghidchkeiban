@@ -2,10 +2,10 @@
   <div>
     <v-row justify="center" align="center">
       <v-col sm="3" offset-sm="5" xs="6">
-        <h1 style="center">Comming Soon</h1>
+        <h1 style="center">Coming Soon</h1>
       </v-col>
       <v-col sm="3" xs="6">
-        <v-img src="/tooth-build.jpg" max-height="500" max-width="500" />
+        <v-img src="/tooth-build.jpg" max-height="300" max-width="300" />
       </v-col>
     </v-row>
     <v-row justify="center" align="center">
