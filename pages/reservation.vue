@@ -1,12 +1,12 @@
 <template>
   <div>
     <v-row justify="center" align="center">
-      <v-col sm="3" offset-sm="5" xs="6">
-        <h1 style="center">Coming Soon</h1>
-      </v-col>
-      <v-col sm="3" xs="6">
-        <v-img src="/tooth-build.jpg" max-height="200" max-width="200" />
-      </v-col>
+      <v-data-table
+        :headers="headers"
+        :items="results"
+        :items-per-page="5"
+        class="elevation-1"
+      />
     </v-row>
     <v-row justify="center" align="center">
       <v-col cols sm="8" offset-sm="2" xs="12">
@@ -45,9 +45,9 @@
 
 <script>
 export default {
-  middleware: 'auth',
   data () {
     return {
+      headers: '',
       results: ''
     }
   },
@@ -60,6 +60,7 @@ export default {
           this.results = response.data
         })
         .catch((error) => {
+          // eslint-disable-next-line no-console
           console.log(error)
         })
     }

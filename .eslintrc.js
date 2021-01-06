@@ -2,19 +2,29 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true,
+    node: true
   },
   parserOptions: {
-    parser: 'babel-eslint',
+    parser: 'babel-eslint'
   },
-  extends: [
-    '@nuxtjs',
-    'prettier',
-    'prettier/vue',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
-  ],
-  plugins: ['prettier'],
+  extends: ['@nuxtjs', 'plugin:nuxt/recommended'],
+  plugins: [],
   // add your custom rules here
-  rules: {},
+  rules: {
+    quotes: 'off',
+    'no-useless-escape': 'off',
+    'object-shorthand': 'off',
+    'no-console': 'off', // attention idéalement en production il ne faut pas de console. faire une fonction adhoc
+    'vue/singleline-html-element-content-newline': 'off',
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: 9,
+        multiline: {
+          max: 3,
+          allowFirstLine: false
+        }
+      }
+    ]
+  }
 }

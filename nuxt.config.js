@@ -1,6 +1,10 @@
 import colors from 'vuetify/es5/util/colors'
 
 export default {
+  env: {
+    apiURL: 'https://sql304.epizy.com',
+    gAPIKey: 'AIzaSyC4l0D-XLMVsyrULXibgbtKwt90X_GKSK4',
+  },
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - raghidchkeiban',

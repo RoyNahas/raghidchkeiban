@@ -43,7 +43,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       clipped: false,
       drawer: false,
@@ -52,14 +52,19 @@ export default {
         {
           icon: 'mdi-apps',
           title: 'Welcome',
-          to: '/',
+          to: '/'
         },
+        {
+          icon: 'mdi-apps',
+          title: 'reserve',
+          to: '/reservation'
+        }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'DrRaghidChkeiban',
+      title: 'DrRaghidChkeiban'
     }
-  },
+  }
 }
 </script>
