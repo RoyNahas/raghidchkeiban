@@ -24,8 +24,7 @@
           <v-card-text class="text--primary">
             <div><v-icon small>mdi-phone</v-icon>phone : +961 70 196 188</div>
             <div>
-              <v-icon small>mdi-linkedin</v-icon>Linkdin :
-              <href>linkedin.com/in/dr-raghid-chkeiban-a69975184</href>
+              <v-icon small>mdi-linkedin</v-icon>Linkdin :linkedin.com/in/dr-raghid-chkeiban-a69975184
             </div>
             <div>
               <v-icon small>mdi-email</v-icon>Email : rchkeiban@gmail.com
@@ -45,23 +44,9 @@
 
 <script>
 export default {
-  middleware: 'auth',
   data () {
     return {
-      results: ''
-    }
-  },
-
-  methods: {
-    loadData () {
-      this.$axios
-        .$get('../php/get_reserve_list.php')
-        .then((response) => {
-          this.results = response.data
-        })
-        .catch((error) => {
-          console.log(error)
-        })
+      data: ''
     }
   }
 }

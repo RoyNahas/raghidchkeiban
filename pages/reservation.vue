@@ -24,8 +24,7 @@
           <v-card-text class="text--primary">
             <div><v-icon small>mdi-phone</v-icon>phone : +961 70 196 188</div>
             <div>
-              <v-icon small>mdi-linkedin</v-icon>Linkdin :
-              <href>linkedin.com/in/dr-raghid-chkeiban-a69975184</href>
+              <v-icon small>mdi-linkedin</v-icon>Linkdin :linkedin.com/in/dr-raghid-chkeiban-a69975184
             </div>
             <div>
               <v-icon small>mdi-email</v-icon>Email : rchkeiban@gmail.com
@@ -47,17 +46,54 @@
 export default {
   data () {
     return {
-      headers: '',
-      results: ''
+      results: [{ reserve_ID: 0, reserve_Date: '01/01/2020', reserve_Name: 'jonDoe', reserve_Notes: '' }]
     }
   },
-
+  computed: {
+    headers () {
+      return [
+        {
+          text: 'ID',
+          align: 'start',
+          sortable: false,
+          value: 'reserve_ID'
+        },
+        {
+          text: 'Date',
+          align: 'start',
+          sortable: false,
+          value: 'reserve_Date'
+        },
+        {
+          text: 'Name',
+          align: 'start',
+          sortable: false,
+          value: 'reserve_Name'
+        },
+        {
+          text: 'Notes',
+          align: 'start',
+          sortable: false,
+          value: 'reserve_Notes'
+        },
+        {
+          text: 'Accepted',
+          align: 'start',
+          sortable: false,
+          value: 'reserve_acceptance'
+        }]
+    }
+  },
+  mounted  () {
+    this.loadData()
+  },
   methods: {
-    loadData () {
-      this.$axios
-        .$get('../php/get_reserve_list.php')
+    async loadData () {
+      await this.$axios.$get(process.env.apiURL + 'get_reserve_list.php')
         .then((response) => {
-          this.results = response.data
+          console.log(response)
+          this.results = response
+          console.log('results:', this.results)
         })
         .catch((error) => {
           // eslint-disable-next-line no-console
