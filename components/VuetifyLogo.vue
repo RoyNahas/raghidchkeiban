@@ -1,9 +1,9 @@
 <template>
-  <img alt="Logo" src="/main.jpeg" />
+  <img alt="Logo" src="/main.jpeg">
 </template>
 
 <style>
-/* 
+/*
 .VuetifyLogo {
   height: 180px;
   width: 180px;

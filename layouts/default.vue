@@ -7,8 +7,9 @@
       fixed
       app
       dark
+      color="rgb(39, 17, 152)"
     >
-      <v-list>
+      <v-list dark>
         <v-list-item
           v-for="(item, i) in items"
           :key="i"
@@ -25,10 +26,18 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
-    <v-app-bar :clipped-left="clipped" fixed app>
+    <v-app-bar
+      :clipped-left="clipped"
+      app
+    >
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <!-- <v-toolbar-title v-text="title" /> -->
-      <v-spacer />
+      <!-- <v-spacer />
+      <v-img
+        src="logo_color - menu.jpg"
+        max-height="100"
+        max-width="200"
+        position="center center"
+      /> -->
     </v-app-bar>
     <v-main>
       <v-container>
@@ -55,15 +64,19 @@ export default {
           to: '/'
         },
         {
-          icon: 'mdi-apps',
-          title: 'reserve',
+          icon: 'mdi-table-plus',
+          title: 'Appoitment',
           to: '/reservation'
+        },
+        {
+          icon: 'mdi-phone',
+          title: 'Contact Us',
+          to: '/contactus'
         }
       ],
       miniVariant: false,
       right: true,
-      rightDrawer: false,
-      title: 'DrRaghidChkeiban'
+      rightDrawer: false
     }
   }
 }
