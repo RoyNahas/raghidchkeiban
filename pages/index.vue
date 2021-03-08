@@ -1,27 +1,55 @@
 <template>
   <v-layout>
     <v-flex xs12>
-      <v-card color="blue lighten-5">
+      <v-card color="transparent" outlined>
         <v-card-text>
-          <v-parallax
-            src="/older-doctor.jpg"
-            height="956"
-            class="parallax-mirror"
-          />
-          <v-row justify="center" align="center">
-            <v-col sm="3" offset-sm="5" xs="6">
-              <h1 color="yellow" style="center">Coming Soon</h1>
-            </v-col>
-            <v-col sm="3" xs="6">
-              <v-img src="/tooth-build.jpg" max-height="200" max-width="200" />
-            </v-col>
-          </v-row>
-          <!-- <v-row justify="center" align="center">
-            <v-card>
-              <v-img src="/logo_color.jpg" />
-            </v-card>
-          </v-row> -->
-          <v-btn class="mr-4">submit</v-btn>
+          <v-carousel
+            cycle
+            height="800"
+            hide-delimiter-background
+            show-arrows-on-hover
+          >
+            <v-carousel-item
+              v-for="(slide, i) in Imgslides"
+              :key="i"
+            >
+              <v-img
+                height="100%"
+                :src="slide.source"
+              >
+                <v-row
+                  class="fill-height"
+                  align="center"
+                  justify="center"
+                >
+                  <div dark class="display-3">
+                    {{ slide.name }}
+                  </div>
+                </v-row>
+              </v-img>
+            </v-carousel-item>
+          </v-carousel>
+          <v-spacer />
+          <v-card tile>
+            <v-card-text justify="center" align="center">
+              <v-alert
+                prominent
+                tile
+              >
+                <v-row>
+                  <v-col cols="12"><h1 class="primary--text">Welcome To Dr. Raghid Chkeiban Clinic</h1></v-col>
+                  <v-col cols="12"><h2 class="primary--text">Where Smiles are Transformed!</h2></v-col>
+                  <v-col cols="12"><h3 class="primary--text">At Braces for Us™, our mission is to provide the highest quality orthodontic care with exceptional service by going the extra mile before, during, and after your treatment. Dr. Martine DeCambre, along with her knowledgeable team, is committed to giving each patient a beautiful smile and the self-esteem that goes with it.</h3></v-col>
+                </v-row>
+              </v-alert>
+              <v-avatar height="400" width="400">
+                <img
+                  height="100%"
+                  src="/primaryPhoto.JPG"
+                >
+              </v-avatar>
+            </v-card-text>
+          </v-card>
         </v-card-text>
       </v-card>
     </v-flex>
@@ -32,16 +60,25 @@
 export default {
   data () {
     return {
-      data: ''
+      data: '',
+      Imgslides: [
+        { source: './slide1.jpeg', name: 'slide1' },
+        { source: './slide2.jpeg', name: 'slide2' },
+        { source: './slide3.jpeg', name: 'slide3' }
+      ],
+      slideHigh () {
+        switch (this.$vuetify.breakpoint.name) {
+          case 'xs': return "600"
+          case 'sm': return "600"
+          case 'md': return "800"
+          case 'lg': return "800"
+          case 'xl': return "800"
+          default: return "500"
+        }
+      }
     }
   }
 }
 </script>
 <style>
-.parallax-mirror,#vurtUnderlay{
-    height:auto!important;
-    width:100%!important;
-    padding:45% 0 0;
-}
-.parallax-mirror img{width:100%!important;height:100%!important}
 </style>

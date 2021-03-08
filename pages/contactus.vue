@@ -2,7 +2,7 @@
   <v-layout>
     <v-flex xs12>
       <v-card d-flex color="grey lighten-3">
-        <v-card-title><v-icon>mdi-phone</v-icon>Contact Us</v-card-title>
+        <v-card-title class="headline">Contact Us<v-icon>mdi-phone</v-icon></v-card-title>
         <hr class="grey lighten-4">
         <v-card-text>
           <v-row>
@@ -17,7 +17,9 @@
                 </v-card-text>
               </v-card>
             </v-col>
-            <v-col xs="12" md="6">
+          </v-row>
+          <v-row>
+            <v-col cols="12" xs="12" sm="12" md="12">
               <v-card elevation="10" d-flex color="grey lighten-4">
                 <v-card-title>Request an Appointment<v-icon>mdi-file-clock</v-icon></v-card-title>
                 <hr>
@@ -26,10 +28,10 @@
                 </v-card-text>
               </v-card>
             </v-col>
-            <v-col xs="12" md="6" justify="center" align="center">
+            <v-col cols="12" xs="12" sm="12" md="12" justify="center" align="center">
               <v-avatar
-                :height="height"
-                :width="height"
+                :height="imHeight"
+                :width="imHeight"
               >
                 <img
                   src="/main.jpeg"
@@ -40,7 +42,7 @@
           <v-row>
             <v-col>
               <v-card elevation="10" d-flex color="grey lighten-4">
-                <v-card-title>locate Us <v-icon>mdi-crosshairs-gps</v-icon></v-card-title>
+                <v-card-title>Locate Us <v-icon>mdi-crosshairs-gps</v-icon></v-card-title>
                 <hr>
                 <v-card-text>
                   <v-row justify="center" align="center" class="container1">
@@ -85,14 +87,14 @@ export default {
     }
   },
   computed: {
-    height () {
+    imHeight () {
       switch (this.$vuetify.breakpoint.name) {
-        case 'xs': return 200
-        case 'sm': return 500
-        case 'md': return 600
-        case 'lg': return 700
-        case 'xl': return 700
-        default: return 0
+        case 'xs': return "300"
+        case 'sm': return "300"
+        case 'md': return "600"
+        case 'lg': return "600"
+        case 'xl': return "600"
+        default: return "0"
       }
     }
   }

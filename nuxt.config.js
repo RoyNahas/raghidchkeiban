@@ -15,7 +15,7 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/raghidIco.ico' }]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -57,7 +57,10 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          raghid1: 'rgb(39, 17, 152)',
+          raghid2: 'rgb(62, 56, 243)',
+          raghid3: 'rgb(85, 129, 216)'
         }
       }
     }
